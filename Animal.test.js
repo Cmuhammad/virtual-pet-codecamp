@@ -56,4 +56,14 @@ describe("Animal",() =>{
 
          })
     })
+    // describe("emotions work?", () =>{
+    //     test("is there an emotion?", ()=>{
+    //         let actual = underTest.currentEmotion();
+    //         expect(actual).toContain();
+            
+        
+
+
+    //     })
+    // })
 })

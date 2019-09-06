@@ -1,9 +1,7 @@
 
 class Animal{
 
-    constructor(){
-        this.emotion = [];
-    }
+    
    
     setOrganic(bool){
         return bool;
@@ -41,8 +39,8 @@ class Animal{
             return "ded";
         }
     }
-    currentEmotion(emotion){
-        
+    currentEmotion(){
+             
 
     }
     
