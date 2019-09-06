@@ -1,14 +1,20 @@
-const AnimalPet = require("./AnimalClass");
-const underTest = new AnimalPet ;
+const AnimalClass = require("./AnimalClass");
+const underTest = new AnimalClass ;
 
 describe("AnimalClass",() =>{
-    describe("parse", ()=>{
-        test("does it return 1", ()=>{
+    describe("setOrganic", ()=>{
+        test("does it return what is was given", ()=>{
             
 
-            const actual = underTest.parse(1);
+            const actual = underTest.setOrganic(true);
 
-            expect(actual).toBe(1);
+            expect(actual).toBe(true);
+        })
+    })
+    describe("isHungry", () =>{
+        test("does hunger work?", () => {
+            const actual = underTest.hungerLevel(2);
+            expect(actual).toBe("hungry");
         })
     })
 })
