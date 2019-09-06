@@ -1,7 +1,7 @@
-const AnimalClass = require("./AnimalClass");
-const underTest = new AnimalClass ;
+const Animal = require("./Animal");
+const underTest = new Animal ;
 
-describe("AnimalClass",() =>{
+describe("Animal",() =>{
     describe("setOrganic", ()=>{
         test("does it return what is was given", ()=>{
             

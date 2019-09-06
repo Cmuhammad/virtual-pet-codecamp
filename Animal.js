@@ -1,4 +1,5 @@
-class AnimalClass{
+
+class Animal{
 
     constructor(){
         this.emotion = [];
@@ -51,4 +52,5 @@ class AnimalClass{
     
 }
 
-module.exports = AnimalClass;
+module.exports = Animal;
+
