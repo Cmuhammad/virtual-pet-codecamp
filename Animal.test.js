@@ -9,15 +9,15 @@ describe("Animal",() =>{
         })
     })
     describe("isHungry", () =>{
-        test("level 1", () => {
-            const actual = underTest.hungerLevel(1);
-            expect(actual).toBe("starving");
-            console.log(actual);
-        })
-        // test("level 2", () => {
-        //     const actual = underTest.hungerLevel(2);
-        //     expect(actual).toBe("hungry");
+        // test("level 1", () => {
+        //     const actual = underTest.hungerLevel(1);
+        //     expect(actual).toBe("starving");
+        //     console.log(actual);
         // })
+        test("level 2", () => {
+            const actual = underTest.hungerLevel();
+            expect(actual).toBe("hungry");
+        })
         // test("level 3", () => {
         //     const actual = underTest.hungerLevel(3);
         //     expect(actual).toBe("peckish");
@@ -74,5 +74,13 @@ describe("Animal",() =>{
             let actual = underTest.petPlay();
             expect(actual).toEqual({energy: 41,boredom:47});
         })
+        
+    })
+    describe("Does eat work",()=>{
+        test("is energy and hunger affected", ()=>{
+            let actual = underTest.petFeed();
+            expect(actual).toEqual({energy: 31,hunger:40});
+        })
+        
     })
 })
