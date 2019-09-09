@@ -2,32 +2,35 @@ const Animal = require("./Animal");
 const underTest = new Animal ;
 
 describe("Animal",() =>{
-    describe("setOrganic", ()=>{
-        test("does it return what is was given", ()=>{
+    describe("constructor", ()=>{
+        test("does it return a name", ()=>{
             
-
-            const actual = underTest.setOrganic(true);
-
-            expect(actual).toBe(true);
+            expect(typeof underTest.name).toMatch("string");
         })
     })
     describe("isHungry", () =>{
-        test("level1", () => {
+        test("level 1", () => {
             const actual = underTest.hungerLevel(1);
             expect(actual).toBe("starving");
+            console.log(actual);
         })
-        test("level2", () => {
-            const actual = underTest.hungerLevel(2);
-            expect(actual).toBe("hungry");
-        })
-        test("level 3", () => {
-            const actual = underTest.hungerLevel(3);
-            expect(actual).toBe("peckish");
-        })
-        test(" level 3", () => {
-            const actual = underTest.hungerLevel(0);
-            expect(actual).toBe("dead");
-        })
+        // test("level 2", () => {
+        //     const actual = underTest.hungerLevel(2);
+        //     expect(actual).toBe("hungry");
+        // })
+        // test("level 3", () => {
+        //     const actual = underTest.hungerLevel(3);
+        //     expect(actual).toBe("peckish");
+        // })
+        // test(" level 4", () => {
+        //     const actual = underTest.hungerLevel(4);
+        //     expect(actual).toBe("full");
+        // })
+       
+        // test(" level 0", () => {
+        //     const actual = underTest.hungerLevel(0);
+        //     expect(actual).toBe("dead");
+        // })
     })
     describe("Energy levels work?", () =>{
          test("does print it rested", () => {
@@ -52,18 +55,24 @@ describe("Animal",() =>{
          })
          test("does print it ded", () => {
             let actual = underTest.energyLevel(-3);
-             expect(actual).toBe("ded");
+             expect(actual).toBe("dead");
 
          })
     })
-    // describe("emotions work?", () =>{
-    //     test("is there an emotion?", ()=>{
-    //         let actual = underTest.currentEmotion();
-    //         expect(actual).toContain();
-            
-        
-
-
+    // describe("Emotion change work?",() => {
+    //     test("does return angry",() =>{
+    //         let actual = underTest.determineEmotion(1);
+    //         expect(actual).toMatch("angry");
+    //     })
+    //     test("does return sad",() =>{
+    //         let actual = underTest.determineEmotion(2);
+    //         expect(actual).toMatch("sad");
     //     })
     // })
+    describe("Does play work",()=>{
+        test("is energy and play affected", ()=>{
+            let actual = underTest.petPlay();
+            expect(actual).toEqual({energy: 41,boredom:47});
+        })
+    })
 })

@@ -1,32 +1,40 @@
 
 class Animal{
+    constructor(name/*,organic*/){
+        this.name= "name";
+        this.hunger = 1;
+        this.bordom=50;
+        this.energy=50;
+        // this.emotionIndex = 0;
+        this.emotionArray = ["content", "angry","sad","excited","happy"];
 
+ //       this.organic=organic;
+    }
     
    
-    setOrganic(bool){
-        return bool;
+    // setName(){
+
+
+    // }
+        
+    
+    hungerLevel(){
+        // 1 is starving , 2 is hungry, 3 is peckish, 0 is dead
+        
+        if(this.hunger >= 76 && this.hunger <= 100){
+            return "full";
+        }else if( this.hunger >=51 && this.hunger <=75){
+            return "pekish";
+        }else if ( this.hunger >=26 && this.hunger <=50 ){
+            return "hungry";
+        }else if ( this.hunger >= 1 && this.hunger <=25){
+            return "starving";
+        }else{
+            return "dead";
+        }
         
     }
-    hungerLevel(currentHunger){
-        // 1 is starving , 2 is hungry, 3 is peckish, 0 is dead
-        switch(currentHunger){
-            case 1:
-                return "starving";
-                break;
-            case 2:
-                return "hungry"
-                break;
-            case 3:
-                return "peckish";
-                break;
-            default:
-                return "dead";
-                break;
-        }
-
-    }
-    energyLevel(currentEnergy)
-    {
+    energyLevel(currentEnergy){
         if(currentEnergy >= 76 && currentEnergy<= 100){
             return "rested";
         }else if( currentEnergy >=51 && currentEnergy<=75){
@@ -36,13 +44,22 @@ class Animal{
         }else if ( currentEnergy >1 && currentEnergy <=25){
             return "exhuasted";
         }else{
-            return "ded";
+            return "dead";
         }
     }
-    currentEmotion(){
-             
-
+    petPlay(){
+        let play = 3;
+        this.bordom -= play;
+        this.energy -= (play*3);
+        let playDict = {energy: this.energy,boredom:this.bordom};
+        return playDict;
+        //this.energy -= (play*3);
     }
+    // determineEmotion(){
+        
+    //     return this.emotionArray[newIndex];
+
+    // }
     
 
 
@@ -52,3 +69,5 @@ class Animal{
 
 module.exports = Animal;
 
+const underTest = new Animal;
+console.log(underTest.emotionIndex);
