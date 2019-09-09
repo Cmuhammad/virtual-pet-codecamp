@@ -31,3 +31,13 @@ What items are needed in Status?(floats)
 		○ 0-100 float
 	- Energy
 0-100 Integer
+
+Mkdir new repository
+Cd into new repo
+Ls to see files
+Git init - to intiallizing git repo
+Git status - shows what is being tracked
+Git add . - includes all files being tracked
+Git commit -m , include a message consider the changes made
+Git remote add  origin link to repo
+Git push -u origin master
