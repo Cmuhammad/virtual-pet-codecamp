@@ -1,77 +1,100 @@
 
 class Animal{
-    constructor(name/*,organic*/){
-        this.name= "name";
+    constructor(name){
+        this.name = name;
         this.hunger = 50;
-        this.bordom=50;
-        this.energy=50;
-        // this.emotionIndex = 0;
+        this.boredom = 50;
+        this.energy = 50;
         this.emotionArray = ["content", "angry","sad","excited","happy"];
-
- //       this.organic=organic;
+    }
+   
+    setName(newName){
+        this.name = newName;
     }
     
-   
-    // setName(){
-
-
-    // }
-        
-    
-    hungerLevel(){
-        // 1 is starving , 2 is hungry, 3 is peckish, 0 is dead
-        
-        if(this.hunger >= 76 && this.hunger <= 100){
+    hungerLevel(){        
+        if (this.hunger >= 76 && this.hunger <= 100){
             return "full";
-        }else if( this.hunger >=51 && this.hunger <=75){
+        }else if (this.hunger >= 51 && this.hunger <= 75){
             return "pekish";
-        }else if ( this.hunger >=26 && this.hunger <=50 ){
+        }else if (this.hunger >= 26 && this.hunger <= 50 ){
             return "hungry";
-        }else if ( this.hunger >= 1 && this.hunger <=25){
+        }else if (this.hunger >= 1 && this.hunger <= 25){
             return "starving";
         }else{
             return "dead";
         }
-        
     }
+
     energyLevel(currentEnergy){
-        if(currentEnergy >= 76 && currentEnergy<= 100){
+        if (currentEnergy >= 76 && currentEnergy <= 100){
             return "rested";
-        }else if( currentEnergy >=51 && currentEnergy<=75){
+        }else if (currentEnergy >= 51 && currentEnergy <= 75){
             return "okay";
-        }else if ( currentEnergy >=26 && currentEnergy <=50 ){
+        }else if (currentEnergy >= 26 && currentEnergy <= 50 ){
             return "sleepy";
-        }else if ( currentEnergy >1 && currentEnergy <=25){
+        }else if (currentEnergy >= 1 && currentEnergy <= 25){
             return "exhuasted";
         }else{
             return "dead";
         }
     }
-    petPlay(){
+
+    boredomLevel(){
+        if (this.boredom >= 76 && this.boredom <= 100){
+            return "ecstatic";
+        }else if (this.boredom >= 51 && this.boredom <= 75){
+            return "entertained";
+        }else if (this.boredom >= 26 && this.boredom <= 50 ){
+            return "chillin'";
+        }else if (this.boredom >= 1 && this.boredom <= 25){
+            return "lethargic";
+        }else{
+            return "not entertained!";
+        }
+    }
+
+    petPlay(){        
+        this.timeTick();
         let play = 3;
-        this.bordom -= play;
+        this.boredom += play;
         this.energy -= (play*3);
-        let playDict = {energy: this.energy,boredom:this.bordom};
+        let playDict = {energy: this.energy,boredom:this.boredom};
         return playDict;
-        //this.energy -= (play*3);
     }
     petFeed(){
+        this.timeTick();
         let food = 10;
-        this.hunger -= food;
+        this.hunger += food;
         this.energy -=(food);
         let playDict = {energy: this.energy,hunger:this.hunger};
         return playDict;
     }
-    // determineEmotion(){
+
+    getEmotion(){
+        let emotionLevel;
+        emotionLevel = (this.energy + this.hunger + this.boredom) / 3;
+        if (emotionLevel >= 1 && emotionLevel <= 20){
+            return this.emotionArray[1];
+        } else if (emotionLevel >= 21 && emotionLevel <= 39){
+            return this.emotionArray[2];
+        } else if (emotionLevel >= 40 && emotionLevel <= 59){
+            return this.emotionArray[0];
+        } else if (emotionLevel >= 60 && emotionLevel <= 79){
+            return this.emotionArray[4];
+        } else if (emotionLevel >= 80 && emotionLevel <= 100){
+            return this.emotionArray[3];
+        } else {
+            return "Error : " + emotionLevel;
+        }
+    }
+
+    timeTick(){
+        this.hunger--;
+        this.boredom--;
+        this.energy--;
+    }
         
-    //     return this.emotionArray[newIndex];
-
-    // }
-    
-
-
-
-    
 }
 
 module.exports = Animal;
