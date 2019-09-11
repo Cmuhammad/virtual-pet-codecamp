@@ -1,80 +1,37 @@
 
 class Animal{
-    constructor(name/*,organic*/){
-        this.name= "name";
-        this.hunger = 50;
-        this.bordom=50;
-        this.energy=50;
-        // this.emotionIndex = 0;
-        this.emotionArray = ["content", "angry","sad","excited","happy"];
-
- //       this.organic=organic;
+    constructor(name){
+    this.name = name;
+    this.hunger = 50;
+    this.boredom = 50;
+    this.energy = 50;
+    this.hygiene = 50;
+    this.oil = 50;
+    this.maintenance = 50;
+    this.charge = 50;
+    this.organic = true;
+    this.emotionArray = ["content", "angry","sad","excited","happy"];
     }
-    
    
-    // setName(){
-
-
-    // }
-        
-    
-    hungerLevel(){
-        // 1 is starving , 2 is hungry, 3 is peckish, 0 is dead
-        
-        if(this.hunger >= 76 && this.hunger <= 100){
-            return "full";
-        }else if( this.hunger >=51 && this.hunger <=75){
-            return "pekish";
-        }else if ( this.hunger >=26 && this.hunger <=50 ){
-            return "hungry";
-        }else if ( this.hunger >= 1 && this.hunger <=25){
-            return "starving";
-        }else{
-            return "dead";
+    setName(newName){
+        this.name = newName;
+    }
+    timeTick(){
+        if (this.organic === true)
+        {
+        this.hunger--;
+        this.boredom--;
+        this.energy--;
+        this.hygiene--;
         }
-        
-    }
-    energyLevel(currentEnergy){
-        if(currentEnergy >= 76 && currentEnergy<= 100){
-            return "rested";
-        }else if( currentEnergy >=51 && currentEnergy<=75){
-            return "okay";
-        }else if ( currentEnergy >=26 && currentEnergy <=50 ){
-            return "sleepy";
-        }else if ( currentEnergy >1 && currentEnergy <=25){
-            return "exhuasted";
-        }else{
-            return "dead";
+        else if(this.organic === false) {
+        this.oil--;
+        this.maintenance--;
+        this.charge--;
         }
+        else {
+        console.log("Error organic is not defined")}
+
     }
-    petPlay(){
-        let play = 3;
-        this.bordom -= play;
-        this.energy -= (play*3);
-        let playDict = {energy: this.energy,boredom:this.bordom};
-        return playDict;
-        //this.energy -= (play*3);
-    }
-    petFeed(){
-        let food = 10;
-        this.hunger -= food;
-        this.energy -=(food);
-        let playDict = {energy: this.energy,hunger:this.hunger};
-        return playDict;
-    }
-    // determineEmotion(){
-        
-    //     return this.emotionArray[newIndex];
-
-    // }
-    
-
-
-
-    
 }
-
 module.exports = Animal;
-
-const underTest = new Animal;
-console.log(underTest.emotionIndex);
