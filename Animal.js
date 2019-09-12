@@ -1,25 +1,16 @@
 
 class Animal{
-    constructor(name/*,organic*/){
-        this.name= "name";
+    constructor(name){
+        this.name= name;
         this.hunger = 50;
         this.bordom=50;
         this.energy=50;
-        // this.emotionIndex = 0;
         this.emotionArray = ["content", "angry","sad","excited","happy"];
-
- //       this.organic=organic;
     }
     
-   
-    // setName(){
-
-
-    // }
         
     
     hungerLevel(){
-        // 1 is starving , 2 is hungry, 3 is peckish, 0 is dead
         
         if(this.hunger >= 76 && this.hunger <= 100){
             return "full";
@@ -76,5 +67,4 @@ class Animal{
 
 module.exports = Animal;
 
-const underTest = new Animal;
-console.log(underTest.emotionIndex);
+
