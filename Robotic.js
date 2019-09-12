@@ -15,7 +15,7 @@ class Robot extends Animal{
         delete this.emotionArray;
     }
     chargeLevel(){
-        super.chargeLevel();
+        // super.chargeLevel();
             this.tick();
             if(this.charge >= 76 && this.charge <= 100){
                 return "fully charged";
@@ -80,8 +80,7 @@ class Robot extends Animal{
 
 }
 
-let robet= new Robot("0101")
-console.log(robet);
+module.exports = Robot;
 
 
 
