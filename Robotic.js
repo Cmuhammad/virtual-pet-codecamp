@@ -9,10 +9,7 @@ class Robot extends Animal{
         this.charge = 80;
         this.oil = 5;
         this.fix = 7;
-        delete this.hunger;
-        delete this.energy;
-        delete this.boredom;
-        delete this.emotionArray;
+      
     }
     chargeLevel(){
         // super.chargeLevel();
@@ -76,6 +73,10 @@ class Robot extends Animal{
         this.oil -= 2;
         this.fix +=2;
 
+    }
+
+    getName(){
+        return this.name;
     }
 
 }
