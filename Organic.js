@@ -4,10 +4,19 @@ class Organic extends Animal{
 
 constructor(){
     super();
+    this.hunger = 50;
+    this.boredom = 50;
+    this.energy = 50;
+    this.hygiene = 50;
+    this.emotionArray = ["content", "angry","sad","excited","happy"];
     }
    
-    setName(newName){
-        this.name = newName;
+    timeTick(){
+        this.hunger--;
+        this.boredom--;
+        this.energy--;
+        this.hygiene--;
+
     }
     
     hungerLevel(){        
@@ -38,7 +47,7 @@ constructor(){
         }
     }
 
-    boredomLevel(){
+    getBoredom(){
         if (this.boredom >= 76 && this.boredom <= 100){
             return "ecstatic";
         }else if (this.boredom >= 51 && this.boredom <= 75){
@@ -57,6 +66,7 @@ constructor(){
         let play = 3;
         this.boredom += play;
         this.energy -= (play*3);
+        this.hygiene -= 8;
         let playDict = {energy: this.energy,boredom:this.boredom};
         return playDict;
     }
@@ -68,10 +78,16 @@ constructor(){
         let playDict = {energy: this.energy,hunger:this.hunger};
         return playDict;
     }
+    petClean(){
+        this.timeTick();
+        this.hygiene = 100;
+        return this.hygiene;
+     
+    }
 
     getEmotion(){
         let emotionLevel;
-        emotionLevel = (this.energy + this.hunger + this.boredom) / 3;
+        emotionLevel = (this.energy + this.hunger + this.boredom + this.hygiene) / 4;
         if (emotionLevel >= 1 && emotionLevel <= 20){
             return this.emotionArray[1];
         } else if (emotionLevel >= 21 && emotionLevel <= 39){
@@ -87,20 +103,19 @@ constructor(){
         }
     }
     getHygiene(){
-        let hygieneLevel;
-        if (hygieneLevel >= 76 && hygieneLevel <= 100){
+        if (this.hygiene >= 76 && this.hygiene <= 100){
             return "fresh";
-        }else if (hygieneLevel >= 51 && hygieneLevel <= 75){
+        }else if (this.hygiene >= 51 && this.hygiene <= 75){
             return "okay";
-        }else if (hygieneLevel >= 26 && hygieneLevel <= 50 ){
+        }else if (this.hygiene >= 26 && this.hygiene <= 50 ){
             return "smelly";
-        }else if (hygieneLevel >= 1 && hygieneLevel <= 25){
+        }else if (this.hygiene >= 1 && this.hygiene <= 25){
             return "dirty";
         }else{
             return "stank";
         }
     }
     }   
-
+module.exports = Organic;
 const testAnimal = new Organic("steve");
 console.log(testAnimal);
