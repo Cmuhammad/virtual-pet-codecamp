@@ -44,6 +44,15 @@ if(isOrganic === "yes"){
 console.log("You can do many things with your new pet:" + ${petName}+ "! ")
 console.log("Play, Feed")
 let q= input.question("What would you like to do? ")
+
+if(userPet.Organic= true){
+    switch(q.toLowerCase()){
+        case "play":
+
+    }
+
+}
+
 // }
 // if(userSelectio.toLowerCase() = "dog")
 console.log("-----------------------------");
