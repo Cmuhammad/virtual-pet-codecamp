@@ -117,5 +117,3 @@ constructor(){
     }
     }   
 module.exports = Organic;
-const testAnimal = new Organic("steve");
-console.log(testAnimal);
