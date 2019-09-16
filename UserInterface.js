@@ -15,45 +15,86 @@ let userSelection = input.question("Do You Want A Cat or Dog? either cat or dog 
 let isOrganic = input.question("How about a Robot? either yes or no ");
 let petName = input.question("What is your pet's name? ");
 
+let userPet;
+
 if(userSelection.toLowerCase() === "cat"){
     if(isOrganic.toLowerCase() === "no"){
-        let userPet = new Cat();
+        userPet = new Cat();
         userPet.setName(petName);
-        return console.log(userPet);
+        console.log(userPet);
     }
     else if(isOrganic.toLowerCase() === "yes"){
-        let userPet = new CatR();
+        userPet = new CatR();
         userPet.setName(petName);
-        return console.log(userPet);
+        console.log(userPet);
     }
 }
 if(userSelection.toLowerCase() === "dog"){
     if(isOrganic.toLowerCase() === "no"){
-        let userPet = new Dog();
+        userPet = new Dog();
         userPet.setName(petName);
-        return console.log(userPet);
+        console.log(userPet);
     }else if(isOrganic.toLowerCase() === "yes"){
-        let userPet = new DogR();
+        userPet = new DogR();
         userPet.setName(petName);
-        return console.log(userPet);
+       console.log(userPet);
     }}
-console.log(userPet);
-if(isOrganic === "yes"){
 
-}
-console.log("You can do many things with your new pet:" + ${petName}+ "! ")
-console.log("Play, Feed")
-let q= input.question("What would you like to do? ")
 
-if(userPet.Organic= true){
-    switch(q.toLowerCase()){
-        case "play":
+console.log("You can do many things with your new pet:" + petName+ "! ")
+let q;
+
+while(q != "quit"){
+    if(userPet.organic=== true){
+            console.log("Play, Feed, or Clean");
+            q = input.question("What would you like to do? ");
+        switch(q.toLowerCase()){
+            case "play":
+                userPet.petPlay();
+                console.log( userPet.name+ " is "+ userPet.getBoredom());
+                break;
+            case "feed":
+                userPet.petFeed();
+                console.log( userPet.name+ " is "+ userPet.hungerLevel());
+                break;
+            case "clean":
+                userPet.petClean();
+                console.log( userPet.name+ " is "+ userPet.getHygiene());
+                break;
+            case "feeling":
+                userPet.getEmotion();
+                console.log( userPet.name+ " is "+ userPet.getEmotion());
+                break;
+            default:
+            console.log("not recognized selection");
+            break;
+        }
 
     }
+    else if(userPet.organic=== false){
+            console.log("Oil, Charge, or Fix ");
+            q = input.question("What would you like to do? ");
+        switch(q.toLowerCase()){
+            case "charge":
+            userPet.chargeRobot();
+            console.log (userPet.Robot+ " is "+ userPet.chargeRobot());
+            break;
+            case "oil":
+                userPet.oilRobot();
+                console.log(userPet.Robot+ " is "+ userPet.oilRobot());
+                break;
+            case "fix":
+                userPet.fixRobot();
+                console.log (userPet.Robot+" is "+ userPet.fixLevel());
+                break;
 
+        }
+    }
+    q= input.question("What would you like to do? ")
 }
 
-// }
+
+
 // if(userSelectio.toLowerCase() = "dog")
 console.log("-----------------------------");
 

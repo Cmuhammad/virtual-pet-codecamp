@@ -9,7 +9,7 @@ class Robot extends Animal{
         this.charge = 80;
         this.oil = 5;
         this.fix = 7;
-      
+       
     }
     chargeLevel(){
         // super.chargeLevel();
@@ -61,10 +61,7 @@ class Robot extends Animal{
     }
 
     fixRobot(){
-        do {
-            this.fix --;
-        }
-        while(this.fix>0);
+       this.fix=0;
         
     }
 
