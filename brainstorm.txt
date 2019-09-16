@@ -1,0 +1,43 @@
+Virtual Pet
+	
+
+    1. Focus on behaviors
+	2. Focus on interaction with single pet
+	3. Focus on shelter
+	4. Deeper OOP principles
+
+Brainstorming sessions
+
+	1. Pet(parent class)
+		a. Status
+			i. Hunger
+			ii. Boredom
+			iii. Health
+		b. Organic or inorganic
+	
+Things  Needed
+	- Behaviors wanted from pet
+		○ Time to affect status
+		○ Status
+	
+What items are needed in Status?(floats)
+	-  As a percentage
+		○ Hunger, boredom, health
+	- Hunger
+		○ 100 - not hunger
+		○ 50 -hungry
+		○ 50>0 - neglect
+	- Boredom
+		○ 0-100 float
+	- Energy
+0-100 Integer
+
+Mkdir new repository
+Cd into new repo
+Ls to see files
+Git init - to intiallizing git repo
+Git status - shows what is being tracked
+Git add . - includes all files being tracked
+Git commit -m , include a message consider the changes made
+Git remote add  origin link to repo
+Git push -u origin master
