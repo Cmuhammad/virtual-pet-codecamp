@@ -1,7 +1,10 @@
 {
   "name": "virtual-pet",
   "version": "1.0.0",
+<<<<<<< HEAD
+=======
   "description": "",
+>>>>>>> 269fc424b217cad10cddba09a1b55337918491d3
   "main": "index.js",
   "scripts": {
     "test": "jest --color --watchAll "
@@ -15,5 +18,10 @@
   "dependencies": {
     "readline": "^1.3.0",
     "readline-sync": "^1.4.10"
+<<<<<<< HEAD
+  },
+  "description": ""
+=======
   }
+>>>>>>> 269fc424b217cad10cddba09a1b55337918491d3
 }

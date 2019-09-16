@@ -9,6 +9,10 @@ constructor(){
     this.energy = 50;
     this.hygiene = 50;
     this.emotionArray = ["content", "angry","sad","excited","happy"];
+<<<<<<< HEAD
+    this.organic = true;
+=======
+>>>>>>> 269fc424b217cad10cddba09a1b55337918491d3
     }
    
     timeTick(){
