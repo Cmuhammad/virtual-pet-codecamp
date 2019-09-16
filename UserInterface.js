@@ -39,7 +39,7 @@ if(userSelection.toLowerCase() === "dog"){
         userPet.setName(petName);
        console.log(userPet);
     }}
-
+userPet;
 
 console.log("You can do many things with your new pet:" + petName+ "! ")
 let q;
@@ -77,15 +77,15 @@ while(q != "quit"){
         switch(q.toLowerCase()){
             case "charge":
             userPet.chargeRobot();
-            console.log (userPet.Robot+ " is "+ userPet.chargeRobot());
+            console.log (userPet.name+ " is "+ userPet.chargeRobot());
             break;
             case "oil":
                 userPet.oilRobot();
-                console.log(userPet.Robot+ " is "+ userPet.oilRobot());
+                console.log(userPet.name+ " is "+ userPet.oilRobot());
                 break;
             case "fix":
                 userPet.fixRobot();
-                console.log (userPet.Robot+" is "+ userPet.fixLevel());
+                console.log (userPet.name+" is "+ userPet.fixLevel());
                 break;
 
         }
