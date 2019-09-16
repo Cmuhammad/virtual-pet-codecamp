@@ -15,5 +15,8 @@ class Animal{
     getId(){
         return animalId;
     }
+    getName(){
+        return this.name;
+    }
 }
 module.exports = Animal;

@@ -42,22 +42,24 @@ if(userSelection.toLowerCase() === "dog"){
 userPet;
 
 console.log("You can do many things with your new pet:" + petName+ "! ")
+console.log("There is a shelter nearby, as well!");
 let q;
 
-while(q != "quit"){
+while (q != "quit"){
     if(userPet.organic=== true){
-            console.log("Play, Feed, or Clean");
-            q = input.question("What would you like to do? ");
+        console.log("(P)lay, (F)eed, or (C)lean");
+        console.log("Or would you like to go to the (S)helter?");
+        q = input.question("What would you like to do? ");
         switch(q.toLowerCase()){
-            case "play":
+            case "p":
                 userPet.petPlay();
                 console.log( userPet.name+ " is "+ userPet.getBoredom());
                 break;
-            case "feed":
+            case "f":
                 userPet.petFeed();
                 console.log( userPet.name+ " is "+ userPet.hungerLevel());
                 break;
-            case "clean":
+            case "c":
                 userPet.petClean();
                 console.log( userPet.name+ " is "+ userPet.getHygiene());
                 break;
@@ -65,13 +67,14 @@ while(q != "quit"){
                 userPet.getEmotion();
                 console.log( userPet.name+ " is "+ userPet.getEmotion());
                 break;
+            case "s":
+                    
             default:
-            console.log("not recognized selection");
+                q = input.question("What would you like to do? ");
             break;
         }
 
-    }
-    else if(userPet.organic=== false){
+    } else if (userPet.organic === false){
             console.log("Oil, Charge, or Fix ");
             q = input.question("What would you like to do? ");
         switch(q.toLowerCase()){
@@ -87,10 +90,17 @@ while(q != "quit"){
                 userPet.fixRobot();
                 console.log (userPet.name+" is "+ userPet.fixLevel());
                 break;
+            default: 
+                q = input.question("What would you like to do? ");
 
         }
+    } else if (q === "s") {
+        console.log("Welcome to the Animal Shelter!");
+        console.log("Here you can (C)reate a new animal, (A)dd your current pet as a resident, (G)et a resident out, or go back (H)ome.");
+        q = input.question("What would you like to do? ");
+        
     }
-    q= input.question("What would you like to do? ")
+    q = input.question("What would you like to do? ");
 }
 
 
