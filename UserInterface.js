@@ -44,6 +44,7 @@ userPet;
 console.log("You can do many things with your new pet:" + petName+ "! ")
 let q;
 
+// Interacting with pet loop
 while(q != "quit"){
     if(userPet.organic=== true){
             console.log("Play, Feed, or Clean");
@@ -92,6 +93,10 @@ while(q != "quit"){
     }
     q= input.question("What would you like to do? ")
 }
+
+///shelter interactions
+
+
 
 
 
