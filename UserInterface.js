@@ -36,7 +36,8 @@ if(userSelection.toLowerCase() === "dog"){
         let userPet = new DogR();
         userPet.setName(petName);
         return console.log(userPet);
-    }}
+    }
+}
 console.log(userPet);
 if(isOrganic === "yes"){
 
