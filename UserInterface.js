@@ -26,10 +26,14 @@ if(userSelection.toLowerCase() === "cat"){
         userPet.setName(petName);
         return console.log(userPet);
     }
+<<<<<<< HEAD
     else{
         return console.log("Error Code: 1738, Check response.")
         }}
 
+=======
+}
+>>>>>>> 269fc424b217cad10cddba09a1b55337918491d3
 if(userSelection.toLowerCase() === "dog"){
     if(isOrganic.toLowerCase() === "no"){
         let userPet = new Dog();
@@ -39,6 +43,7 @@ if(userSelection.toLowerCase() === "dog"){
         let userPet = new DogR();
         userPet.setName(petName);
         return console.log(userPet);
+<<<<<<< HEAD
     }
     else{
         return console.log("Error Code: 1738, Check response.")
@@ -79,6 +84,26 @@ if(userPet.organic=false){
 }}
 
 
+=======
+    }}
+console.log(userPet);
+if(isOrganic === "yes"){
+
+}
+console.log("You can do many things with your new pet:" + ${petName}+ "! ")
+console.log("Play, Feed")
+let q= input.question("What would you like to do? ")
+
+if(userPet.Organic= true){
+    switch(q.toLowerCase()){
+        case "play":
+
+    }
+
+}
+
+// }
+>>>>>>> 269fc424b217cad10cddba09a1b55337918491d3
 // if(userSelectio.toLowerCase() = "dog")
 console.log("-----------------------------");
 
