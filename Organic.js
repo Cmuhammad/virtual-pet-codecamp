@@ -10,6 +10,7 @@ constructor(){
     this.hygiene = 50;
     this.emotionArray = ["content", "angry","sad","excited","happy"];
     this.organic = true;
+    this.health = 100;
     }
    
     tick(){
@@ -17,6 +18,7 @@ constructor(){
         this.boredom--;
         this.energy--;
         this.hygiene--;
+        this.health--;
     }
     
     hungerLevel(){        
@@ -111,6 +113,28 @@ constructor(){
         }else{
             return "stank";
         }
+   
+
+    }
+    getHealth(){
+        if (this.health >= 76 && this.health <= 100){
+            return "feeling great";
+        }else if (this.health >= 51 && this.health <= 75){
+            return "feeling good";
+        }else if (this.health >= 26 && this.health <= 50 ){
+            return "i am sick";
+        }else if (this.health >= 1 && this.health <= 25){
+            return "i am dying";
+        }else{
+            return "ded";
+        }
+   
+    }
+    takeMeToTheDoctor(){
+        this.hunger = this.hunger / 2;
+        this.health = 100;
+        this.hygiene = 100;
+        this.boredom = this.boredom / 2;  
     }
 }   
 module.exports = Organic;
