@@ -95,7 +95,15 @@ while(q != "quit"){
 }
 
 ///shelter interactions
-
+console.log("We also have shelter near by as well.")
+console.log(" You can interact with the shelter in many ways")
+console.log("")
+let shelter;
+let cat1;
+let cat2; 
+let dog1 ;
+let dog2;
+newShelter();
 
 
 
@@ -106,4 +114,20 @@ console.log("-----------------------------");
 
 console.log("");
 console.log("");
+
+function newShelter() {
+    const shelter = new Shelter();
+    let cat1 = new Cat();
+    let cat2 = new CatR();
+    let dog1 = new Dog();
+    let dog2 = new DogR();
+    dog1.setName('barko');
+    dog2.setName("barkk");
+    cat1.setName("meowss");
+    cat2.setName("beeeo");
+    shelter.addResident(cat1);
+    shelter.addResident(cat2);
+    shelter.addResident(dog1);
+    shelter.addResident(dog2);
+}
 
