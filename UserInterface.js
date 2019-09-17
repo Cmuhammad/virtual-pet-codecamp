@@ -21,9 +21,6 @@ handleCreateNewPet();
 
 let userInput;
 while (userInput != "quit") {
-    
-    
-    
     if(userPet.organic === true) {
         homeMenuOrganic();
         switch(userInput.toLowerCase()) {
@@ -52,9 +49,7 @@ while (userInput != "quit") {
         }
     } 
     
-    
-    
-    
+
     else if (userPet.organic === false){
         homeMenuRobot();
         switch(userInput.toLowerCase()){
