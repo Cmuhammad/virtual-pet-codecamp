@@ -8,7 +8,4 @@ describe("Animal",() =>{
             expect(typeof underTest.name).toBe("undefined");
         })
     })
-
-
-
 })

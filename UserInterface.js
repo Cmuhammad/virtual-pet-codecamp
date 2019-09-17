@@ -19,69 +19,82 @@ let userPet;
 
 handleCreateNewPet();
 
+// Game Loop
 let userInput;
 while (userInput != "quit") {
     if(userPet.organic === true) {
         homeMenuOrganic();
-        switch(userInput.toLowerCase()) {
-            case "p":
-                userPet.petPlay();
-                console.log( userPet.name+ " is "+ userPet.getBoredom());
-                break;
-            case "f":
-                userPet.petFeed();
-                console.log( userPet.name+ " is "+ userPet.hungerLevel());
-                break;
-            case "c":
-                userPet.petClean();
-                console.log( userPet.name+ " is "+ userPet.petClean());
-                break;
-            case "e":
-                userPet.getEmotion();
-                console.log( userPet.name+ " is "+ userPet.getEmotion());
-                break;
-            case "s":
-                shelterMenuSwitch();
-                break;
-            default:
-                whatWouldYouLikeToDo();
-            break;
-        }
+        organicSwitchStatemnt();
     } 
     
 
     else if (userPet.organic === false){
         homeMenuRobot();
-        switch(userInput.toLowerCase()){
-            case "c":
-                userPet.chargeRobot();
-                console.log (userPet.name+ " is "+ userPet.chargeRobot());
-                break;
-            case "o":
-                userPet.oilRobot();
-                console.log(userPet.name+ " is "+ userPet.oilRobot());
-                break;
-            case "f":
-                userPet.fixRobot();
-                console.log (userPet.name+" is "+ userPet.fixLevel());
-                break;
-            case "s" :
-                shelterMenuSwitch();
-                break;
-            default: 
-                whatWouldYouLikeToDo();        
-        }
+        roboticSwitchStatment();
+    }
+}
+
+function organicSwitchStatemnt() {
+    switch (userInput.toLowerCase()) {
+        case "p":
+            userPet.petPlay();
+            console.log(userPet.name + " is " + userPet.getBoredom());
+            break;
+        case "f":
+            userPet.petFeed();
+            console.log(userPet.name + " is " + userPet.hungerLevel());
+            break;
+        case "c":
+            userPet.petClean();
+            console.log(userPet.name + " is " + userPet.petClean());
+            break;
+        case "e":
+            userPet.getEmotion();
+            console.log(userPet.name + " is " + userPet.getEmotion());
+            break;
+        case "s":
+            shelterMenuSwitch();
+            break;
+        default:
+            whatWouldYouLikeToDo();
+    }
+}
+
+function roboticSwitchStatment() {
+    switch (userInput.toLowerCase()) {
+        case "c":
+            userPet.chargeRobot();
+            console.log(userPet.name + " is " + userPet.chargeRobot());
+            break;
+        case "o":
+            userPet.oilRobot();
+            console.log(userPet.name + " is " + userPet.oilRobot());
+            break;
+        case "f":
+            userPet.fixRobot();
+            console.log(userPet.name + " is " + userPet.fixLevel());
+            break;
+        case "s":
+            shelterMenuSwitch();
+            break;
+        default:
+            whatWouldYouLikeToDo();
     }
 }
 
 function homeMenuOrganic() {
+    console.clear();
+    console.log("Welcome Home!");
     console.log("You can do many things with your pet:" + petName + "! ");
     console.log("There is a shelter nearby, as well!");
     console.log(`${petName}: (P)lay, (F)eed, (C)lean, or check their (E)motional status.`);
     console.log("Or would you like to go to the (S)helter?");
     whatWouldYouLikeToDo();
 }
+
 function homeMenuRobot() {
+    console.clear();
+    console.log("Welcome Home!");
     console.log("You can do many things with your pet:" + petName + "! ");
     console.log("There is a shelter nearby, as well!");
     console.log(`${petName}: (O)il, (C)harge, or (F)ix`);
@@ -90,9 +103,12 @@ function homeMenuRobot() {
 }
 
 function shelterMenu() {
+    console.clear();
     console.log("Welcome to the Animal Shelter!");
+    console.log(`${petName} is with you.`)
+    console.log(`Charge level is: ${userPet.getChargeLevel()}`);
     console.log("Would you like to...");
-    console.log(`${petName}: Create a (N)ew pet, (A)dopt a pet, or (L)eave a pet with us?`);
+    console.log(`Create a (N)ew pet, (O)bserve all pets in the shelter, or (L)eave a pet with us?`);
     console.log("...or go (B)ack home?");
     whatWouldYouLikeToDo();
 }
@@ -102,9 +118,9 @@ function shelterMenuSwitch(){
     switch(userInput.toLowerCase){
         case "n" : 
             handleCreateNewPet();
-        case "a" : 
-            //work on this later
         case "l" : 
+            //work on this later
+        case "o" : 
             //work on this later
         case "b" : 
            if(userPet.isOrganic){
@@ -113,6 +129,7 @@ function shelterMenuSwitch(){
            } else {
                homeMenuRobot();
                break;
+               
            }
     }
 
@@ -121,6 +138,9 @@ function shelterMenuSwitch(){
 function whatWouldYouLikeToDo() {
     userInput = "";
     userInput = input.question("What would you like to do?  : ");
+    if(userPet.isOrganic){
+        Robot.tick();
+    }
 }
 
 function handleCreateNewPet() {
