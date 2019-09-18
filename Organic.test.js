@@ -90,4 +90,10 @@ describe("Organic",() =>{
             expect(actual).toBe(100);
         })
     })
+    describe("does getHealth does return correct value",() => {
+        test("feeling great",()=> {
+            let actual = underTest.getHealth();
+            expect(actual).toBe("feeling great");
+        })
+    })
 })
