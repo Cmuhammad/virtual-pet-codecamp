@@ -17,7 +17,7 @@ let petName = input.question("What is your pet's name? ");
 
 let userPet;
 const shelter = new Shelter();
-populateShelter(shelter); ///populates shleter
+populateShelter(shelter);
 
 handleCreateNewPet();
 
@@ -104,7 +104,7 @@ function homeMenuRobot() {
     console.log("Or would you like to go to the (S)helter?");
     whatWouldYouLikeToDo();
 }
-//Needs to be adjusts
+
 function shelterMenu() {
     // console.clear();
 
@@ -114,7 +114,7 @@ function shelterMenu() {
     console.log("...or go (B)ack home?");
     whatWouldYouLikeToDo();
 }
-//works
+
 function observe(userPet) {
     if (userPet.organic === true) {
         console.log(`animal status is below`);
@@ -131,9 +131,10 @@ function observe(userPet) {
         whatWouldYouLikeToDo();
     }
 }
-//Needs work
+
 function shelterMenuSwitch(){
     shelterMenu();
+    if()
     switch(userInput.toLowerCase().trim()){
         case "n" : 
             handleCreateNewPet();
@@ -159,17 +160,15 @@ function shelterMenuSwitch(){
     }
 
 }
-//works- needs adjustment
+
 function whatWouldYouLikeToDo() {
     userInput = "";
     userInput = input.question("What would you like to do?  : ");
     if(userPet.isOrganic){
         Robot.tick();
     }
-
-    
 }
-//works
+//Works
 function handleCreateNewPet() {
     if (userSelection.toLowerCase() === "cat") {
         if (isOrganic.toLowerCase() === "no") {
@@ -201,7 +200,7 @@ function handleCreateNewPet() {
     
 
 }
-//Works - remove setters, use constructor
+//Works
 function populateShelter(shelter) {
     let cat1 = new Cat();
     let cat2 = new CatR();
@@ -216,5 +215,6 @@ function populateShelter(shelter) {
     shelter.addResident(dog1);
     shelter.addResident(dog2);
 }
+
 
 

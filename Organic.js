@@ -12,12 +12,11 @@ constructor(){
     this.organic = true;
     }
    
-    timeTick(){
+    tick(){
         this.hunger--;
         this.boredom--;
         this.energy--;
         this.hygiene--;
-
     }
     
     hungerLevel(){        
@@ -63,7 +62,6 @@ constructor(){
     }
 
     petPlay(){        
-        this.timeTick();
         let play = 3;
         this.boredom += play;
         this.energy -= (play*3);
@@ -72,7 +70,6 @@ constructor(){
         return playDict;
     }
     petFeed(){
-        this.timeTick();
         let food = 10;
         this.hunger += food;
         this.energy -=(food);
@@ -80,7 +77,6 @@ constructor(){
         return playDict;
     }
     petClean(){
-        this.timeTick();
         this.hygiene = 100;
         return this.hygiene;
      
@@ -116,5 +112,5 @@ constructor(){
             return "stank";
         }
     }
-    }   
+}   
 module.exports = Organic;
