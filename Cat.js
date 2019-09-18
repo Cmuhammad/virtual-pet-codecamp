@@ -1,9 +1,10 @@
 const Organic = require ("./Organic");
 class Cat extends Organic{
 
-    constructor(){
+    constructor(name){
         super();
         this.type = "Cat";
+        this.name = name;
     }
 
     speak(){

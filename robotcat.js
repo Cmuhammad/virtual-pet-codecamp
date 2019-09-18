@@ -1,9 +1,10 @@
 const Robot = require ("./Robotic");
 class CatR extends Robot{
 
-    constructor(){
+    constructor(name){
         super();
         this.type = "robot cat";
+        this.name = name;
     }
 
     speak(){
