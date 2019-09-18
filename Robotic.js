@@ -9,32 +9,35 @@ class Robot extends Animal{
         this.charge = 80;
         this.oil = 0;
         this.fix = 7;
-        delete this.hunger;
-        delete this.energy;
-        delete this.boredom;
-        delete this.emotionArray;
+       
     }
-    chargeLevel(){
-        // super.chargeLevel();
-            this.tick();
-            if(this.charge >= 76 && this.charge <= 100){
-                return "fully charged";
-            }else if( this.charge >=51 && this.charge <=75){
-                return "adequte charge";
-            }else if ( this.charge >=26 && this.charge <=50 ){
-                return "plan on plugging me in b";
-            }else if ( this.charge >= 1 && this.charge <=25){
-                return " yo you bugging";
-            }else{
-                return "----------- 0% battery";
-            }
+    getChargeLevel(){
+        this.tick();
+        if(this.charge >= 76 && this.charge <= 100){
+            return ` ${this.charge}: fully charged.`;
+        }else if( this.charge >=51 && this.charge <=75){
+            return `${this.charge}: adequtly charged.`;
+        }else if ( this.charge >=26 && this.charge <=50 ){
+            return `${this.charge} : plan on plugging me in b!`;
+        }else if ( this.charge >= 1 && this.charge <=25){
+            return  `${this.charge} : yo you bugging!`;
+        }else{
+            animalDied();
+            return "----------- 0% battery";
+
+            // calls deadAnimal();this.isDead = true;
         }
     tick(){
         this.charge -- ;
         this.oil --;
         this.fix ++;
 
+    tick(){
+        this.charge--;
+        this.oil--;
+        this.fix++;
     }
+
     oilRobot(){
         if(this.oil <= 10 && this.oil >=0){
         this.oil ++;
@@ -45,8 +48,8 @@ class Robot extends Animal{
     }
 
     chargeRobot(){
-        this.charge ++;
-        return this.charge;
+        this.charge = 100;
+        this.getChargeLevel();
     }
 
     fixLevel(){
@@ -80,18 +83,15 @@ class Robot extends Animal{
 
     }
 
+    getName();{
+        return this.name;
+    }
+
 }
 
 module.exports = Robot;
 const Roboplay = new Robot("Scooby");
 console.log(Roboplay);
-
-
-
-
-
-
-
 
 
 

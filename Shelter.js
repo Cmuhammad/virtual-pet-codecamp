@@ -1,19 +1,19 @@
-class Shelter{
+class Shelter {
+  constructor() {
+    this.residents = new Map();
+  }
 
-    takeAnimal(){
+  addResident(residentToAdd) {
+    this.residents.set(residentToAdd.getName(),residentToAdd);
+  }
 
-    }
+  getResident(residentName) {
+    return this.residents.get(residentName);
+  }
 
-    giveAnimal(){
-
-    }
-
-    playerPets(){
-
-    }
-
-    
-
-
-
+  getResidentArray() {
+    return [...this.residents.values()];
+  }
 }
+
+module.exports = Shelter;

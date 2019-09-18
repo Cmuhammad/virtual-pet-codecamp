@@ -2,7 +2,7 @@ const Robot = require("./Robotic");
 const underTest = new Robot;
 
 describe("Robot",() =>{
-    describe("organic", ()=>{
+    describe("Robot", ()=>{
         test("does it return false", ()=>{
     
 
