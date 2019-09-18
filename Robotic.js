@@ -7,7 +7,7 @@ class Robot extends Animal{
         this.organic = false;
         this.name = name;
         this.charge = 80;
-        this.oil = 5;
+        this.oil = 0;
         this.fix = 7;
         delete this.hunger;
         delete this.energy;
@@ -30,7 +30,7 @@ class Robot extends Animal{
             }
         }
     tick(){
-        this.charge --;
+        this.charge -- ;
         this.oil --;
         this.fix ++;
 
@@ -67,7 +67,9 @@ class Robot extends Animal{
         do {
             this.fix --;
         }
-        while(this.fix>0);
+        while(this.fix>(0);
+
+        return this.fix;
         
     }
 
@@ -81,6 +83,8 @@ class Robot extends Animal{
 }
 
 module.exports = Robot;
+const Roboplay = new Robot("Scooby");
+console.log(Roboplay);
 
 
 

@@ -7,7 +7,7 @@ describe("Robot",() =>{
     
 
             expect(underTest.organic).toBeFalsy();
-        })
+})           })
 describe("charge",() =>{
     test("does it return 80", ()=>{
 
@@ -16,9 +16,9 @@ describe("charge",() =>{
 })
     })
 describe("oil",() =>{
-    test("does it return 5", ()=>{
+    test("does it return 0", ()=>{
 
-        expect(underTest.oil).toBe(5);
+        expect(underTest.oil).toBe(0);
     })
 })
 describe("fix",() =>{
@@ -33,10 +33,40 @@ describe("chargeLevel", () =>{
         expect(actual).toMatch("fully charged");
     })
 })
-describe("oilRobot", =>{
-    test("d", ()=>{
-        let actual= underTest.chargeLevel
+describe("oilRobot", ()=>{
+    test("no oil", ()=>{
+        let actual= underTest.oilRobot()
+        expect(actual).toBe("bro I am ded");
     })
 })
+// describe("tick", () =>{
+    // test("charge going down",() =>{
+        // let actual= underTest.tick()
+        // expect(underTest.charge).toBe(78);
+    // })
+    // test("oil is going down",() =>{
+        // let actual= underTest.tick()
+        // expect(underTest.oil).toBe(0);
+   // })
+    // test("robot needs fixing",() =>{
+        // let actual= underTest.tick()
+        // expect(underTest.fix).toBe(11);
+    // })
+// })
+// })
+describe("chargeRobot", ()=>{
+    test("charging level", ()=>{
+        expect(underTest.charge).toBe(79);
+    })
 })
-
+describe("fixLevel", ()=>{
+    test("I am good son", ()=>{
+        expect(underTest.fixLevel()).toBe("yeah imma die");
+    }) 
+})
+describe("fixRobot", ()=>{
+    test("fix the robot",()=>{
+        expect(underTest.fixRobot()).toBe(0);
+ 
+    })
+})
