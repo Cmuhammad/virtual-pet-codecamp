@@ -1,12 +1,11 @@
 {
-
   "name": "virtual-pet",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --color --watchAll "
-   },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
