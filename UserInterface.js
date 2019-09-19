@@ -18,7 +18,6 @@ let petName = input.question("What is your pet's name? ");
 let userPet;
 const shelter = new Shelter();
 populateShelter(shelter); ///populates shleter
-
 handleCreateNewPet();
 
 // Game Loop
