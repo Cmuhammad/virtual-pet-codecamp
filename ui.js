@@ -119,15 +119,15 @@ while(userInput !="quit"){
         switch (userInput.toLowerCase()) {
             case "c":
                 userPet.chargeRobot();
-                console.log(userPet.name + " is " + userPet.chargeRobot());
+                console.log(userPet.name + " is " + userPet.getCharge());
                 break;
             case "o":
                 userPet.oilRobot();
-                console.log(userPet.name + " is " + userPet.oilRobot());
+                console.log(userPet.name + " is " + userPet.getOil());
                 break;
             case "f":
                 userPet.fixRobot();
-                console.log(userPet.name + " is " + userPet.fixLevel());
+                console.log(userPet.name + " is " + userPet.getFix());
                 break;
             case "n" : 
                 handleCreateNewPet();
@@ -152,6 +152,7 @@ while(userInput !="quit"){
 function whatWouldYouLikeToDo() {
     userInput = "";
     userInput = input.question("What would you like to do?  : ");
+    
   }
 function handleCreateNewPet() {
     let userSelection = input.question("Do You Want A Cat or Dog? either cat or dog ");

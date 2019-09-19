@@ -85,7 +85,7 @@ function roboticSwitchStatment() {
 }
 
 function homeMenuOrganic() {
-    // console.clear();
+    console.clear();
     console.log("Welcome Home!");
     console.log("You can do many things with your pet:" + petName + "! ");
     console.log("There is a shelter nearby, as well!");
