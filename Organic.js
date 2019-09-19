@@ -2,16 +2,16 @@ const Animal = require("./Animal");
 
 class Organic extends Animal{
 
-constructor(){
-    super();
-    this.hunger = 50;
-    this.boredom = 50;
-    this.energy = 50;
-    this.hygiene = 50;
-    this.emotionArray = ["content", "angry","sad","excited","happy"];
-    this.organic = true;
-    this.health = 100;
-    }
+    constructor(){
+        super();
+        this.hunger = 50;
+        this.boredom = 50;
+        this.energy = 50;
+        this.hygiene = 50;
+        this.emotionArray = ["content", "angry","sad","excited","happy"];
+        this.organic = true;
+        this.health = 100;
+        }
    
     tick(){
         this.hunger--;
@@ -20,21 +20,22 @@ constructor(){
         this.hygiene--;
         this.health--;
     }
-    
+    //get hunger level
+    //test passes
     hungerLevel(){        
-        if (this.hunger >= 76 && this.hunger <= 100){
-            return "full";
-        }else if (this.hunger >= 51 && this.hunger <= 75){
-            return "pekish";
-        }else if (this.hunger >= 26 && this.hunger <= 50 ){
-            return "hungry";
-        }else if (this.hunger >= 1 && this.hunger <= 25){
-            return "starving";
+        this.tick();
+        if(this.hunger >= 76 && this.hunger <= 100){
+            return ` ${this.hunger}: full.`;
+        }else if( this.hunger >=51 && this.hunger <=75){
+            return `${this.hunger}: content.`;
+        }else if ( this.hunger >=26 && this.hunger <=50 ){
+            return `${this.hunger} : hungry`;
+        }else if ( this.hunger >= 1 && this.hunger <=25){
+            return  `${this.hunger} : yo you bugging!`;
         }else{
             return "dead";
-        }
-    }
-
+    }}
+    // test passes
     energyLevel(currentEnergy){
         if (currentEnergy >= 76 && currentEnergy <= 100){
             return "rested";
@@ -48,7 +49,7 @@ constructor(){
             return "dead";
         }
     }
-
+   // test passes
     getBoredom(){
         if (this.boredom >= 76 && this.boredom <= 100){
             return "ecstatic";
@@ -62,7 +63,7 @@ constructor(){
             return "not entertained!";
         }
     }
-
+    // test pass
     petPlay(){        
         let play = 3;
         this.boredom += play;
@@ -71,6 +72,7 @@ constructor(){
         let playDict = {energy: this.energy,boredom:this.boredom};
         return playDict;
     }
+    // test pass
     petFeed(){
         let food = 10;
         this.hunger += food;
@@ -78,12 +80,13 @@ constructor(){
         let playDict = {energy: this.energy,hunger:this.hunger};
         return playDict;
     }
+    // test passed
     petClean(){
         this.hygiene = 100;
         return this.hygiene;
      
     }
-
+    // passed
     getEmotion(){
         let emotionLevel;
         emotionLevel = (this.energy + this.hunger + this.boredom + this.hygiene) / 4;
@@ -101,6 +104,7 @@ constructor(){
             return "Error : " + emotionLevel;
         }
     }
+    // test passed
     getHygiene(){
         if (this.hygiene >= 76 && this.hygiene <= 100){
             return "fresh";
@@ -116,6 +120,7 @@ constructor(){
    
 
     }
+    // passed
     getHealth(){
         if (this.health >= 76 && this.health <= 100){
             return "feeling great";
@@ -135,6 +140,6 @@ constructor(){
         this.health = 100;
         this.hygiene = 100;
         this.boredom = this.boredom / 2;  
-    }
+    } //no test
 }   
 module.exports = Organic;
